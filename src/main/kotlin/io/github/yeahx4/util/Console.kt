@@ -14,6 +14,7 @@ class Console {
                 false -> "clear"
             }
             Runtime.getRuntime().exec(cmd)
+            // @TODO("Not Working")
         }
 
         fun readLine(text: String?): String {
@@ -27,6 +28,7 @@ class Console {
             println("${Color.RESET}계속하려면 아무키나 누르십시오.")
             with (Scanner(System.`in`)) {
                 next()
+                // @TODO("It continues when enter press, not by every key.")
             }
         }
     }
