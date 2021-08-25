@@ -1,20 +1,12 @@
 package io.github.yeahx4.util
 
-import java.util.*
+import java.io.IOException
+import java.util.Scanner
 
 class Console {
     companion object {
-        private fun isWindows(): Boolean {
-            return System.getProperty("os.name").lowercase().contains("windows")
-        }
-
         fun clear() {
-            val cmd = when (isWindows()) {
-                true -> "cls"
-                false -> "clear"
-            }
-            Runtime.getRuntime().exec(cmd)
-            // @TODO("Not Working")
+            print("\u001b[H\u001b[2J")
         }
 
         fun readLine(text: String?): String {
@@ -25,11 +17,10 @@ class Console {
         }
 
         fun pause() {
-            println("${Color.RESET}계속하려면 아무키나 누르십시오.")
-            with (Scanner(System.`in`)) {
-                next()
-                // @TODO("It continues when enter press, not by every key.")
-            }
+            println("${Color.RESET}Press Enter to continue")
+            try {
+                System.`in`.read()
+            } catch (ex: IOException) {}
         }
     }
 }
