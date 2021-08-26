@@ -16,6 +16,15 @@ class Console {
             }
         }
 
+        fun readLine(text: String, minLength: Long): String {
+            var input: String
+            do {
+                input = readLine(text)
+            } while (input.length < minLength)
+
+            return input
+        }
+
         fun pause() {
             println("${Color.RESET}Press Enter to continue")
             try {
@@ -31,6 +40,7 @@ class Console {
             println("==============================")
 
             pause()
+            clear()
         }
     }
 }
