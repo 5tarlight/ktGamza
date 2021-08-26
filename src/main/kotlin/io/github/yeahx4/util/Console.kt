@@ -22,5 +22,15 @@ class Console {
                 System.`in`.read()
             } catch (ex: IOException) {}
         }
+
+        fun printLogo() {
+            println("==============================")
+            println("Welcome to ${Color.CYAN}Gamza${Color.RESET}.")
+            println("")
+            println("Experience ${Color.PURPLE}RPG ${Color.RESET}on mud!")
+            println("==============================")
+
+            pause()
+        }
     }
 }
